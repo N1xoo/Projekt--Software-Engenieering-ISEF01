@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studentenseite</title>
+    <link rel="stylesheet" href="style.css">
+    <img src="Screenshot 2024-03-13 103023.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Willkommen (Name)</h1>
+        <button id="logout">Logout</button>
+    </header>
+
+    <section id="buttons">
+        <button id="newTicketButton">Ticket erstellen</button>
+        <button id="viewTicketsButton">Bestehende Tickets</button>
+    </section>
+
+    <section id="tCreation" style="display: none;">
+        <h2>Neues Ticket erstellen</h2>
+        <form id="submitTicket">
+            <label for="date">Datum:</label>
+            <input type="date" id="date" name="date" required readonly>
+          
+            <label for="kursID">KursID:</label>
+            <input type="text" id="kursID" name="kursID" required>
+
+            <label for="title">Titel:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="mediaType">Medium:</label>
+            <select id="mediaType" name="mediaType" required>
+                <option value="Skript">Skript</option>
+                <option value="Vodcast">Vodcast</option>
+                <option value="Online Fragen">Online Fragen</option>
+                <option value="Online Videos">Online Videos</option>
+                <option value="Podcast">Podcast</option>
+                <option value="Sonstige">Sonstige</option>
+            </select>
+
+            <label for="description">Beschreibung:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="exactLocation">Genaue Stelle:</label>
+            <input type="text" id="exactLocation" name="exactLocation" required>
+
+            <label for="seriousness">Schwerwiegend:</label>
+            <select id="seriousness" name="seriousness" required>
+                <option value="low">Niedrig</option>
+                <option value="medium">Mittel</option>
+                <option value="high">Hoch</option>
+            </select>
+
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="name">Name, Vorname:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="course">Studiengang:</label>
+            <input type="text" id="course" name="course" required>
+
+            <label for="matriculation">Matrikelnummer:</label>
+            <input type="text" id="matriculation" name="matriculation" required>
+
+            <button type="submit">Ticket absenden</button>
+        </form>
+    </section>
+
+    <section id="viewTickets" style="display: none;">
+        <h2>Bestehende Tickets</h2>
+        <ul id="ticketList"></ul>
+    </section>
+
+    <script>
+        document.getElementById('date').value = new Date().toISOString().split('T')[0];
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

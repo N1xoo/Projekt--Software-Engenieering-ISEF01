@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <img src="Screenshot 2024-03-13 103023.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Login Korrekturmanagementsystem IU</h1>
+    </header>
+    <section>
+      <div class="login-Bereich">
+        <form id="login">
+          <label for="username">Benutzername:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="password">Passwort:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Anmelden</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      // Login-Formular-Handler
+      async function handleLogin(event) {
+        event.preventDefault(); // Standardformular-Aktion verhindern
+
+        // Eingabewerte abrufen
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        try {
+          // API-Aufruf für die Anmeldung
+          const response = await fetch("/api/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password }),
+          });
+
+          // Fehlerbehandlung bei ungültigen Anmeldedaten
+          if (!response.ok) {
+            throw new Error("Ungültige Anmeldedaten");
+          }
+
+          // Erfolgreiche Anmeldung: Weiterleitung
+          const data = await response.json();
+          window.location.href = data.redirectUrl;
+        } catch (err) {
+          // Fehler anzeigen
+          showError("Login fehlgeschlagen: " + err.message);
+        }
+      }
+
+      // Fehleranzeige
+      function showError(message) {
+        alert(message); // Optional: Durch ein visuelles Element ersetzen
+      }
+
+      // Event-Listener für das Formular hinzufügen
+      document.getElementById("login").addEventListener("submit", handleLogin);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorenseite</title>
+    <link rel="stylesheet" href="style.css" />
+    <img src="Screenshot 2024-03-13 103023.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Willkommen (Name)</h1>
+        <button id="logout">Logout</button>
+    </header>
+
+   
+
+    <main>
+        <section id="ticketMgt" style="display: none">
+            <h2>Alle Tickets verwalten</h2>
+            <div id="Filter">
+                <input type="text" id="searchTickets" placeholder="Nach Titel suchen..." />
+                <select id="filterStatus">
+                    <option value="">Alle Status</option>
+                    <option value="erfasst">Erfasst</option>
+                    <option value="in Bearbeitung">In Bearbeitung</option>
+                    <option value="abgeschlossen">Abgeschlossen</option>
+                </select>
+                <button id="applyFilters">Filter anwenden</button>
+            </div>
+            <ul id="ticketList"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+/* Allgemeine Stile */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #b9fff9;
+}
+
+/* Header-Stile */
+header {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+}
+img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 85px;
+  width: auto;
+  top: 5px;
+}
+
+h1 {
+  margin: 15px;
+  font-size: 24px;
+}
+
+/* Section-Stile */
+section {
+  margin: 100px;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid black; /* Schwarze Umrandung */
+}
+
+/* Button-Container für Studentenseite und Tutorseite */
+#buttons,
+#tutorNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+
+#login button {
+  width: 220px; /* Festlegen der Breite */
+  padding: 18px; /* Anpassung des Abstands innerhalb des Buttons */
+ 
+  text-align: center; /* Text zentrieren */
+  margin: 10px auto; /* Abstand und Zentrierung */
+  display: block; /* Zentrierung sicherstellen */
+}
+
+
+
+button {
+  padding: 20px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+#buttons button,
+#tutorNav button {
+  flex: 1 1 0;
+  min-width: 150px;
+}
+
+/* Formularelemente Stile */
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+input,
+textarea,
+select {
+  
+  padding: 10px;
+  border: 1px solid #232222;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing:border-box;
+  background-color: #eef4f5;
+}
+
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+select {
+  height: 40px;
+}
+
+/* Ticket-Liste Stile */
+#ticketList {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+#ticketList li {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+#ticketList li:hover {
+  background-color: #f1f1f1;
+}
+
+#ticketList li div {
+  margin-top: 15px;
+}
+
+#ticketList li strong {
+  font-size: 20px;
+  color: #333;
+}
+
+#ticketList ul {
+  padding-left: 25px;
+}
+
+#ticketList ul li {
+  padding: 6px 0 6px 15px;
+  border-left: 3px solid #333;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+#ticketList ul li span {
+  color: #666;
+  font-size: 12px;
+}
+
+/* Such- und Filterbereich Stile */
+#Filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+#Filter input,
+#Filter select,
+#Filter button {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#Filter button {
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+#Filter button:hover {
+  background-color: #218838;
+}
+
+#submitTicket button[type="submit"] {
+  width: 220px; /* Festlegen der Breite */
+  padding: 18px; /* Anpassung des Abstands innerhalb des Buttons */
+ 
+  text-align: center; /* Text zentrieren */
+  margin: 10px auto; /* Abstand und Zentrierung */
+  display: block; /* Zentrierung sicherstellen */
+}
+
+
+/* Aktionsbuttons-Stile */
+.action-buttons-container {
+  margin-top: 15px;
+}
+
+.action-button {
+  margin-right: 10px;
+}
+
+.action-button:last-child {
+  margin-right: 0;
+}
+
+.action-buttons-wrapper {
+  display: flex;
+  justify-content: center; /* Buttons zentrieren */
+  margin-top: 20px; /* Abstand nach oben */
+}
+
+.action-buttons-wrapper .action-button {
+  margin: 0 10px; /* Abstand zwischen den Buttons */
+  width: 150px; /* Gleiche Breite für alle Buttons */
+  text-align: center; /* Text innerhalb des Buttons zentrieren */
+  padding: 10px; /* Gleichmäßige Höhe */
+  font-size: 16px; /* Einheitliche Schriftgröße */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #Filter {
+    flex-direction: column;
+  }
+
+  #buttons,
+  #tutorNav {
+    flex-direction: column;
+  }
+
+  button,
+  #Filter input,
+  #Filter select,
+  #Filter button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+}
