@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 const mongoURI =
-  "mongodb+srv://22robbe11:BmXU0azdniTf188f@korrektursystem.ogewt.mongodb.net/?retryWrites=true&w=majority&appName=Korrektursystem";
+  "enter your mongodb connection here";
 mongoose
   .connect(mongoURI)
   .then(() => console.log("MongoDB verbunden!"))
