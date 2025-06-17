@@ -1,6 +1,8 @@
 Korrekturmanagementsystem
 
 
+MongoDB link in server.js updaten
+
 node server.js um den server zu starten
 strg+c  im terminal um den server zu schließen
 
